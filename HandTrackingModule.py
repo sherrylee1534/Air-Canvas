@@ -13,26 +13,14 @@ class HandDetector:
 
         # Hands class
         self.mp_hands = mp.solutions.hands
-        self.hands = self.mp_hands.Hands(self.mode, self.max_hands, self.complexity, self.detection_confidence, self.track_confidence)
+        self.hands = self.mp_hands.Hands(self.mode, self.max_hands, self.complexity, self.detection_confidence,
+                                         self.track_confidence)
 
         # Joints of Hands
         self.mp_draw = mp.solutions.drawing_utils
 
         # Landmark indexes
         self.tip_idx = [4, 8, 12, 16, 20]  # Only for the tips of each digit
-
-        # Coordinates
-        self.options = [[0, 90], [125, 215], [260, 340], [390, 475], [510, 640]]
-        self.opt0_l = 0
-        self.opt0_r = 90
-        self.opt1_l = 125
-        self.opt1_r = 215
-        self.opt2_l = 260
-        self.opt2_r = 340
-        self.opt3_l = 390
-        self.opt3_r = 475
-        self.opt4_l = 510
-        self.opt4_r = 640
 
     def find_hands(self, img, draw=True):
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # Hands class only uses RGB but OpenCV uses BGR
@@ -93,6 +81,7 @@ class HandDetector:
 
         return fingers
 
+
 def main():
     # Frame rate
     prev_time = 0
@@ -115,7 +104,7 @@ def main():
         prev_time = curr_time
 
         # Display frame rate
-        cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 0), 3)
+        cv2.putText(img, str(int(fps)), (30, 450), cv2.FONT_HERSHEY_PLAIN, 3, (255, 255, 0), 3)
 
         cv2.imshow("Image", img)
         k = cv2.waitKey(1) & 0xFF

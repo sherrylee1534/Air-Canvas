@@ -109,7 +109,7 @@ def main():
         cv2.imshow("Image", img)
         k = cv2.waitKey(1) & 0xFF
 
-        if k == ord('q'):
+        if k == ord('a'):
             break
 
 

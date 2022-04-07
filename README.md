@@ -1,4 +1,4 @@
 # Air-Canvas
-Computer Vision projected implemented with OpenCV and MediaPipe.
+Computer Vision project implemented with OpenCV and MediaPipe. Allows you to draw in the air digitally.
 
 Built upon code by Murtaza Hassan.
